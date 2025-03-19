@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for the hedge fund app
+				profit: {
+					DEFAULT: '#10B981',
+					muted: 'rgba(16, 185, 129, 0.2)'
+				},
+				loss: {
+					DEFAULT: '#EF4444',
+					muted: 'rgba(239, 68, 68, 0.2)'
 				}
 			},
 			borderRadius: {
@@ -84,12 +94,45 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				'pulse-subtle': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.8' },
+				},
+				'gradient-shift': {
+					'0%': { backgroundPosition: '0% 50%' },
+					'50%': { backgroundPosition: '100% 50%' },
+					'100%': { backgroundPosition: '0% 50%' },
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-subtle': 'pulse-subtle 4s ease-in-out infinite',
+				'gradient-shift': 'gradient-shift 15s ease infinite',
+				'fade-in': 'fade-in 0.7s ease-out',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+			},
+			backdropFilter: {
+				'none': 'none',
+				'blur': 'blur(8px)',
+				'blur-md': 'blur(12px)',
+				'blur-lg': 'blur(16px)',
+				'blur-xl': 'blur(24px)',
+				'blur-2xl': 'blur(40px)',
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
